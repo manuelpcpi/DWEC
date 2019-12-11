@@ -1,0 +1,43 @@
+<html>
+    <head>
+<title>Crear dinámicamente una tabla con el DOM API</title>
+<script>
+    function start() {
+        // conseguimos referencia del body
+        var mybody = document.getElementsByTagName("body")[0];
+
+        // creamos los elementos <table> y <tbody> 
+        mytable = document.createElement("table");
+        mytablebody = document.createElement("tbody");
+
+        // creamos las celdas
+        for(var j = 0; j < 3; j++) {
+            // creamos un elemento  <tr> 
+            mycurrent_row = document.createElement("tr");
+
+            for(var i = 0; i < 4; i++) {
+                // creamos los elementos <td>
+                mycurrent_cell = document.createElement("td");
+                // creamos un   Text Node
+                currenttext = document.createTextNode("Esta celda está en la fila " + j + ", columna " + i);
+                // añadimos el Text Node que hemos creado a la celda <td>
+                mycurrent_cell.appendChild(currenttext);
+                // añadimos  la celda <td>a la fila <tr>
+                mycurrent_row.appendChild(mycurrent_cell);
+            }
+            // añadimos la fila <tr> al <tbody>
+            mytablebody.appendChild(mycurrent_row);
+        }
+
+        // añadimos <tbody> a la  <table>
+        mytable.appendChild(mytablebody);
+        // añadimos <table> al  <body>
+        mybody.appendChild(mytable);
+        // configuramos el atributo border de mytable a 2;
+        mytable.setAttribute("border","2");
+    }
+</script>
+</head>
+<body onload="start()">
+</body>
+</html>
