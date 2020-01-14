@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>DOM</title>
+<script>
+function verSrcDeLaPrimeraImagen(){
+alert(document.images[0].src);
+}
+</script>
+</head>
+<body>
+<img id='primera_imagen' class='imagenes' src='imagen1.jpg' height="200 px" />
+<br />
+<img id='segunda_imagen' class='imagenes' src='imagen2.jpg' height="200 px" />
+<button type='button' onclick='verSrcDeLaPrimeraImagen();'>
+Ver src de la primera imagen
+</button>
+</body>
+</html>
